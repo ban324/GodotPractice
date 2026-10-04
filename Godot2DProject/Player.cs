@@ -13,6 +13,7 @@ public partial class Player : Area2D
 		//SOMETHINGcHANGE
 		 _screenSize.X = 720/2;
 		_screenSize.Y = 480;
+		_screenSize.Y -= Scale.Y*32;
 		Position = _screenSize;
 		
 	}

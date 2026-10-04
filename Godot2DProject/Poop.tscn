@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://wfi2hnd3olup"]
+
+[ext_resource type="Script" uid="uid://dct5yx1ytlpv6" path="res://Poop.cs" id="1_a0eba"]
+[ext_resource type="Texture2D" uid="uid://c5c7twontnp6p" path="res://art/enemySwimming_1.png" id="1_gqf86"]
+[ext_resource type="Texture2D" uid="uid://clns7on4hbamb" path="res://art/enemySwimming_2.png" id="2_a0eba"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mks8r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gqf86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_a0eba")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sed3d"]
+radius = 40.000004
+height = 120.000015
+
+[node name="Poop" type="Area2D" unique_id=1875915884]
+rotation = 1.5707964
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_a0eba")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=424559049]
+sprite_frames = SubResource("SpriteFrames_mks8r")
+frame_progress = 0.86271864
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516374787]
+rotation = 1.5707964
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_sed3d")
