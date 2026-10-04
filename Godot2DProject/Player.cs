@@ -11,10 +11,9 @@ public partial class Player : Area2D
 	public override void _Ready()
 	{
 		//SOMETHINGcHANGE
-		 _screenSize.X = 720;
+		 _screenSize.X = 720/2;
 		_screenSize.Y = 480;
-		Position.X = _screenSize.X/2;
-		Position.Y=_screenSize.Y;
+		Position = _screenSize;
 		
 	}
 
