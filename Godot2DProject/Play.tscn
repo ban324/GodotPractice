@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b3gg8eifvwyjx"]
+
+[ext_resource type="PackedScene" uid="uid://dnk1rby1f0id3" path="res://player.tscn" id="1_1m0ic"]
+[ext_resource type="PackedScene" uid="uid://wfi2hnd3olup" path="res://Poop.tscn" id="2_2peyt"]
+
+[node name="Play" type="Node2D" unique_id=58447402]
+
+[node name="Player" parent="." unique_id=706013063 instance=ExtResource("1_1m0ic")]
+position = Vector2(293, 335)
+
+[node name="Poop" parent="." unique_id=1875915884 instance=ExtResource("2_2peyt")]
+scale = Vector2(0.3, 0.3)
