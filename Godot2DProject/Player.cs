@@ -11,9 +11,10 @@ public partial class Player : Area2D
 	public override void _Ready()
 	{
 		//SOMETHINGcHANGE
-		 _screenSize.X = 480;
-		_screenSize.Y = 720;
-		Position = _screenSize/2;
+		 _screenSize.X = 720;
+		_screenSize.Y = 480;
+		Position.X = _screenSize.X/2;
+		Position.Y=_screenSize.Y;
 		
 	}
 
@@ -21,14 +22,6 @@ public partial class Player : Area2D
 	public override void _Process(double delta)
 	{
 		Vector2 velocity = Vector2.Zero;
-		if(Input.IsActionPressed("Up"))
-		{
-			velocity.Y = -1;
-		}
-		if(Input.IsActionPressed("Down"))
-		{
-			velocity.Y = 1;
-		}
 		if(Input.IsActionPressed("Right"))
 		{
 			velocity.X = 1;
