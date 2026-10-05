@@ -25,6 +25,8 @@ height = 120.000015
 [node name="Poop" type="Area2D" unique_id=1875915884]
 rotation = 1.5707964
 scale = Vector2(0.1, 0.1)
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_a0eba")
 minSpeed = 30
 maxSpeed = 60

@@ -5,7 +5,7 @@ public partial class Player : Area2D
 {
 	[Export]
 	public int Speed { get; set; } = 400; // How fast the player will move (pixels/sec).
-
+	[Export]
 	Vector2 _screenSize= Vector2.Zero; // Size of the game window.
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -15,9 +15,26 @@ public partial class Player : Area2D
 		_screenSize.Y = 480;
 		_screenSize.Y -= Scale.Y*32;
 		Position = _screenSize;
-		
+		AreaEntered+=OnAreaEntered;
+	}
+	private void OnAreaEntered(Area2D area)
+	{
+		GD.Print($"Area 충돌: {area.Name}");
+	
+		if (area is Poop poop)
+		{
+			var poopManager = GetParent().FindChild("PoopManager") as PoopManager;
+			poopManager?.StopTimer();
+		}
 	}
 
+	private void OnBodyEntered(Node2D body)
+	{
+		if(body is Poop poop)
+		{
+			(GetParent().FindChild("PoopManager") as PoopManager).StopTimer();		
+		}
+	}
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{

@@ -9,8 +9,8 @@
 [node name="Player" parent="." unique_id=706013063 instance=ExtResource("1_1m0ic")]
 position = Vector2(293, 335)
 
-[node name="Poop" parent="." unique_id=1875915884 instance=ExtResource("2_2peyt")]
-scale = Vector2(0.3, 0.3)
-
 [node name="PoopManager" type="Node2D" parent="." unique_id=1906947030]
 script = ExtResource("3_2peyt")
+poop = ExtResource("2_2peyt")
+timer = 2.0
+duration = 1.0
